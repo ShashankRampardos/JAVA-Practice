@@ -14,8 +14,8 @@ class SharedData
             this.n=n;
         System.out.println("Produced:"+n);
         semaphore=false;
-        notify();
-    }
+        notify();//notifu does not release monitor of this object
+    }//critical section end now monitor is released automatically
     public synchronized int get()throws InterruptedException
     {
         if(semaphore==true)//if producer not yet started execution
